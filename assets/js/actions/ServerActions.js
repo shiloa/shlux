@@ -1,11 +1,14 @@
-import API from '../api';
+import { UPDATE_SERVERS, FILTER_SERVERS } from '../constants/ActionTypes';
 
-class ServerActions {
-  updateServers(servers) {
-  }
-
-  filterServers(query) {
-  }
+export function updateServers() {
+  return {
+    type: UPDATE_SERVERS
+  };
 }
 
-// TODO: export default
+export function filterServers(query) {
+  return {
+    type: FILTER_SERVERS,
+    query: query
+  };
+}
