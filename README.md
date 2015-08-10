@@ -6,7 +6,7 @@ Small comparison of flux/data-flow implementations that play nicely with React. 
 
 ### How the Code is Organized
 
-Each branch contains a specific implementation of the same app using the selected technology. The branch is usually named after the corrosponding library. So, for example, the `redux` branch contains the [redux](https://github.com/gaearon/redux) implementation.
+Each branch contains a specific implementation of the same app using the selected technology. The branch is usually named after the corresponding library. So, for example, the `redux` branch contains the [redux](https://github.com/gaearon/redux) implementation.
 
 To see supported implementation, list all the branches:
 
