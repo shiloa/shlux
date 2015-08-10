@@ -10,8 +10,10 @@ export default class ServerList extends React.Component {
   }
 
   render() {
+    var _key = 0;
     var servers = _.map(this.props.servers, (server) => {
-      return ( <Server key={server.uuid} data={server} /> );
+      _key += 1;
+      return ( <Server key={_key} data={server} /> );
     });
 
     return (

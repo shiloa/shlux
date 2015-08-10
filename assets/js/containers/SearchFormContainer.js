@@ -1,35 +1,36 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import SearchForm from '../components/SearchForm';
 import ServerActions from '../actions/ServerActions';
-import ServerStore from '../stores/ServerStore';
 
-export default class SearchFormContainer extends React.Component {
+class SearchFormContainer extends React.Component {
   constructor(props) {
     super(props);
-  }
-
-  componentDidMount() {
-    // TODO
-  }
-
-  componentWillUnmount() {
-    // TODO
   }
 
   changeHandler(e) {
     e.preventDefault();
     var query = e.target.value;
 
-    // TODO: trigger new search 
+    // trigger new search 
     // servers request here
+    this.props.onChangeHandler(query);
   }
 
   render() {
     return (
       <SearchForm 
-        changeHandler={this.changeHandler} 
-        count={this.state.servers.length} 
+        onChangeHandler={this.changeHandler.bind(this)} 
+        count={this.props.servers.length} 
       />
     );
   }
 }
+
+export default connect(function(state) {
+  let { servers } = state.servers;
+  return {
+    servers: servers
+  };
+})(SearchFormContainer);
+

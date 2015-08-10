@@ -12,7 +12,7 @@ export default class SearchForm extends React.Component {
     }
     return (
       <div className="well">
-        <form action="" className="form-inline" onChange={this.props.changeHandler.bind(this)}>
+        <form action="" className="form-inline" onChange={this.props.onChangeHandler.bind(this)}>
           <div className="form-group">
             <label htmlFor="query" 
               style={{"marginRight" : "1em"}}>Search By Node Type:</label>

@@ -1,14 +1,25 @@
-import { UPDATE_SERVERS, FILTER_SERVERS } from '../constants/ActionTypes';
-
-export function updateServers() {
-  return {
-    type: UPDATE_SERVERS
-  };
-}
+import API from '../api';
+import { SERVERS_UPDATED } from '../constants/ActionTypes';
 
 export function filterServers(query) {
+  // query the API for the filtered server list
+  var servers = API.filter(query);
+
   return {
-    type: FILTER_SERVERS,
-    query: query
+    type: SERVERS_UPDATED,
+    servers: servers
   };
+
+  // return function(dispatch) {
+
+    // // query the API for the filtered server list
+    // var servers = API.filter(query);
+
+    // // notify that the server list
+    // // was filtered
+    // dispatch({
+      // type: SERVERS_UPDATED,
+      // servers: servers
+    // });
+  // };
 }

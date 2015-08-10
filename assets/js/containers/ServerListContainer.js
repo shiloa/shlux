@@ -1,26 +1,24 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import ServerList from '../components/ServerList';
-import ServerStore from '../stores/ServerStore';
 
-export default class ServerListContainer extends React.Component {
+class ServerListContainer extends React.Component {
   constructor(props) {
     super(props);
   }
 
-  componentDidMount() {
-    // TODO
-  }
-
-  componentWillUnmount() {
-    // TODO
-  }
-
   render() {
+    let { servers } = this.props;
     return (
-      <ServerList servers={this.state.servers} />
+      <ServerList servers={servers} />
     );
   }
 }
 
-
+export default connect(function(state) {
+  let { servers } = state.servers;
+  return {
+    servers: servers
+  };
+})(ServerListContainer);
 

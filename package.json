@@ -9,10 +9,13 @@
     "file-loader": "*",
     "jsx-loader": "*",
     "keymirror": "^0.1.1",
+    "object-assign": "^3.0.0",
     "react": "^0.13.3",
     "react-hot-loader": "^1.2.8",
+    "react-redux": "^0.6.0",
     "react-router": "^0.13.3",
-    "redux": "^0.12.0",
+    "redux": "^1.0.0-rc",
+    "redux-thunk": "^0.1.0",
     "underscore": "^1.8.3",
     "webpack": "^1.10.5",
     "webpack-configuration": "0.0.6",
@@ -23,7 +26,7 @@
   },
   "private": true,
   "scripts": {
-    "webpack-dev": "webpack-dev-server --config webpack.config.js --hot --progress --inline",
-    "webpack-build": "webpack --config webpack.config.js --colors --hide-modules -p"
+    "dev": "webpack-dev-server --config webpack.config.js --hot --progress --inline",
+    "build": "webpack --config webpack.config.js --colors --hide-modules -p"
   }
 }
