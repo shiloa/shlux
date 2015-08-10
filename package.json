@@ -22,7 +22,7 @@
   },
   "private": true,
   "scripts": {
-    "webpack-dev": "webpack-dev-server --config webpack.config.js --hot --progress --inline",
-    "webpack-build": "webpack --config webpack.config.js --colors --hide-modules -p"
+    "dev": "webpack-dev-server --config webpack.config.js --hot --progress --inline",
+    "build": "webpack --config webpack.config.js --colors --hide-modules -p"
   }
 }
