@@ -27,4 +27,13 @@ $ python -m SimpleHTTPServer
 ```
 App is available in [http://localhost:8000](http://localhost:8000)
 
-### 
+### Currently Supported:
+
+* [redux](http://gaearon.github.io/redux/)
+* [alt.js](http://alt.js.org)
+
+### Contribute:
+
+1. Create new branch from master, preferrably named after the lib you're implementing.
+2. Make it work.
+3. Open PR.
