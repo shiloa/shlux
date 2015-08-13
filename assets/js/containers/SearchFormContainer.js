@@ -6,30 +6,33 @@ import ServerStore from '../stores/ServerStore';
 export default class SearchFormContainer extends React.Component {
   constructor(props) {
     super(props);
+    this.state = { serversLength: ServerStore.servers.length };
   }
 
   componentDidMount() {
-    // TODO
+    ServerStore.addListener('SERVERS_UPDATED', this.getServersLength, this);
   }
 
   componentWillUnmount() {
-    // TODO
+    ServerStore.removeListener('SERVERS_UPDATED', this.getServersLength, this);
+  }
+
+  getServersLength() {
+    this.setState({serversLength: ServerStore.servers.length});
   }
 
   changeHandler(e) {
     e.preventDefault();
     var query = e.target.value;
 
-    // TODO: trigger new search 
-    // servers request here
+    ServerActions.filterServers(query);
   }
 
   render() {
     return (
       <SearchForm 
         changeHandler={this.changeHandler} 
-        count={this.state.servers.length} 
-      />
+        count={this.state.serversLength} />
     );
   }
 }

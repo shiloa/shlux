@@ -1,11 +1,14 @@
 import API from '../api';
+import ServerStore from '../stores/ServerStore';
 
-class ServerActions {
-  updateServers(servers) {
-  }
+var ServerActions = {
 
-  filterServers(query) {
-  }
-}
+  filterServers: function(query) {
+    var servers = API.filter(query);
+    ServerStore.servers = servers;
+    ServerStore.emitEvent('SERVERS_UPDATED');
+  },
+};
 
-// TODO: export default
+
+module.exports = ServerActions;
